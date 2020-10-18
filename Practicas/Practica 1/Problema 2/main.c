@@ -6,25 +6,36 @@
 
 int main() {
 	//leer datos 
-	int tam,j;
+	int tam,j,i,div;
+	
 	printf("ingrese el tamaño del vector: ");
 	scanf("%d",&tam);
-	printf("%d \n",tam);
-	int vector1[tam],i, vector2[10];
+	
+	int* vector1 = NULL;
+	int* vector2 = NULL;
+	vector1 = (int *)malloc(sizeof(int)*tam);
+	vector2 = (int *)malloc(sizeof(int)*tam);
 	for(i=0;i<tam;i++){
 		printf("ingrese el valor %d: ",i);
 		scanf("%d",&vector1[i]);
 		printf("\nvalor %d: \n",vector1[i]);
 	}
-	printf("%d",i);
-	i=i-1;
-	//ordenar datos
-	for(j=0;j<tam;j++){
-		vector2[j]=vector1[i];
-		i=i-1;
-		printf("vector en %d su valor es %d y de i es %d \n", j, vector2[j], i);
-	}
 
+	//ordenar datos
+	div=tam/2;
+	i=div;
+	for(j=0;j<div;j++){
+		vector2[j]=vector1[i];
+		i=i+1;
+	}
+		i=0;
+	for(j=div;j<tam;j++){
+		vector2[j]=vector1[i];
+		i=i+1;
+	}
+	for(i=0;i<tam;i++){
+		printf("vector en posicion %d su valor es %d\n",i,vector2[i]);
+	}
 	
 	return 0;
 }
