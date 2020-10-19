@@ -2,28 +2,43 @@
 #include <math.h>
 #define MAX 20
  
-void mostrar_matriz(int matriz[][MAX], int orden);
-int determinante(int matriz[][MAX], int orden);
-int cofactor(int matriz[][MAX], int orden, int fila, int columna);
+void mostrar_matriz(int** matriz[][MAX], int orden);
+int determinante(int** matriz[][MAX], int orden);
+int cofactor(int** matriz[][MAX], int orden, int fila, int columna);
  
 int main()
 {
-   int matriz[MAX][MAX];
+   int** matriz = NULL;   
    int orden, i, j;
+   matriz = (int**)malloc( sizeof(int*) * orden);
    
-   printf("Ingresa el orden de la matriz (maximo %d): ", MAX);
+   printf("Ingresa el orden de la matriz : ");
    scanf("%d", &orden);
-   while (orden < 0 || orden > MAX) {
+   while (orden < 0 ) {
        printf("\nEl orden de la matriz no puede ser mayor que %d\n", MAX);
        printf("Ingrese nuevamente el orden de la matriz: ");
       scanf("%d", &orden);
+   } 
+   
+   for (i = 0; i < orden; i++) {
+     	
+      	matriz[i] = (int*)malloc(sizeof(int)*orden);
+         //scanf("%d", &matriz[i][j]);
+      
    }
    
    printf("\nIngrese los elementos de la matriz:\n\n");
    for (i = 0; i < orden; i++) {
-      for (j = 0; j < orden; j++) {
+      for (j = 0; j < orden; j++) {      
          scanf("%d", &matriz[i][j]);
+       }
+   }
+   for (i = 0; i < orden; i++) {
+      for (j = 0; j < orden; j++) {      
+         
+         printf(" %d ",matriz[i][j]);
       }
+      printf("\n");
    }
  
    printf("\nMostrando la matriz ingresada:\n");
@@ -36,7 +51,7 @@ int main()
    return 0;
 }
  
-void mostrar_matriz(int matriz[][MAX], int orden)
+void mostrar_matriz(int** matriz[][MAX], int orden)
 {
     int i, j;
     
@@ -50,7 +65,7 @@ void mostrar_matriz(int matriz[][MAX], int orden)
 }
  
  
-int determinante(int matriz[][MAX], int orden)
+int determinante(int** matriz[][MAX], int orden)
 {
    int det = 0.0, j;
    
@@ -58,7 +73,7 @@ int determinante(int matriz[][MAX], int orden)
       det = matriz[0][0];
    } else {
       for (j = 0; j < orden; j++) {
-         det = det + matriz[0][j] * cofactor(matriz, orden, 0, j);
+         det = det + matriz[0][j] * cofactor(matriz, orden, 0, j));
       }
    }
    
@@ -66,7 +81,7 @@ int determinante(int matriz[][MAX], int orden)
 }
  
  
-int cofactor(int matriz[][MAX], int orden, int fila, int columna)
+int cofactor(int** matriz[][MAX], int orden, int fila, int columna)
 {
    int submatriz[MAX][MAX];
    int n = orden - 1;
