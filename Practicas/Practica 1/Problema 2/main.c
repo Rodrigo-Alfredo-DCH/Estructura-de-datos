@@ -18,7 +18,7 @@ int main() {
 	
 	for(i=0;i<tam;i++){
 		printf("ingrese el valor %d: ",i);
-		scanf("%d",&vector1[i]);
+		vector1[i] = rand();
 		printf("\nvalor %d: \n",vector1[i]);
 	}
 	intercambiarElementos(vector1, tam, i);
