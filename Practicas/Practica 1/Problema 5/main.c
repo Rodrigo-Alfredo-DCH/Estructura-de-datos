@@ -1,106 +1,29 @@
 #include <stdio.h>
-#include <math.h>
-#define MAX 20
- 
-void mostrar_matriz(int** matriz[][MAX], int orden);
-int determinante(int** matriz[][MAX], int orden);
-int cofactor(int** matriz[][MAX], int orden, int fila, int columna);
- 
-int main()
-{
-   int** matriz = NULL;   
-   int orden, i, j;
-   matriz = (int**)malloc( sizeof(int*) * orden);
-   
-   printf("Ingresa el orden de la matriz : ");
-   scanf("%d", &orden);
-   while (orden < 0 ) {
-       printf("\nEl orden de la matriz no puede ser mayor que %d\n", MAX);
-       printf("Ingrese nuevamente el orden de la matriz: ");
-      scanf("%d", &orden);
-   } 
-   
-   for (i = 0; i < orden; i++) {
-     	
-      	matriz[i] = (int*)malloc(sizeof(int)*orden);
-         //scanf("%d", &matriz[i][j]);
-      
-   }
-   
-   printf("\nIngrese los elementos de la matriz:\n\n");
-   for (i = 0; i < orden; i++) {
-      for (j = 0; j < orden; j++) {      
-         scanf("%d", &matriz[i][j]);
-       }
-   }
-   for (i = 0; i < orden; i++) {
-      for (j = 0; j < orden; j++) {      
-         
-         printf(" %d ",matriz[i][j]);
-      }
-      printf("\n");
-   }
- 
-   printf("\nMostrando la matriz ingresada:\n");
-   mostrar_matriz(matriz, orden);
-   
-   printf("\nEl determinante es: %d\n", determinante(matriz, orden));
- 
-   getchar();
-   getchar();
-   return 0;
+#include <stdlib.h>
+
+#include "matrices.h"
+
+void llenar_matriz(int, double **);
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	int orden;
+	printf("dime el orden de la matriz: ");
+	scanf("%d, &orden");	
+	double **matriz = crear_matriz(orden,orden);
+	llenar_matriz(orden, matriz);
+	printf("el determinante vale: %lf\n", calcularDeterminante(orden, matriz));
+	return 0;
 }
- 
-void mostrar_matriz(int** matriz[][MAX], int orden)
-{
-    int i, j;
-    
-    printf("Orden: %d\n", orden);
-   for (i = 0; i < orden; i++) {
-      for (j = 0; j < orden; j++) {
-          printf("\t%d", matriz[i][j]);
-      }
-      printf("\n");
-   }
-}
- 
- 
-int determinante(int** matriz[][MAX], int orden)
-{
-   int det = 0.0, j;
-   
-   if (orden == 1) {
-      det = matriz[0][0];
-   } else {
-      for (j = 0; j < orden; j++) {
-         det = det + matriz[0][j] * cofactor(matriz, orden, 0, j));
-      }
-   }
-   
-   return det;
-}
- 
- 
-int cofactor(int** matriz[][MAX], int orden, int fila, int columna)
-{
-   int submatriz[MAX][MAX];
-   int n = orden - 1;
-   int i, j;
-   
-   int x = 0;
-   int y = 0;
-   for (i = 0; i < orden; i++) {
-      for (j = 0; j < orden; j++) {
-         if (i != fila && j != columna) {
-            submatriz[x][y] = matriz[i][j];
-            y++;
-            if (y >= n) {
-               x++;
-               y = 0;
-            }
-         }
-      }
-   }
-   
-   return pow(-1.0, fila + columna) * determinante(submatriz, n);
+
+void llenar_matriz(int orden, double **mat){
+	int i,j;
+	printf("\nIngrese los elementos de la matriz: \n");
+   for(i = 0; i<orden; i++) {
+      for(j = 0; j<orden; j++){      
+         scanf("%lf", mat[i][j]);
+		 }
+	}
+	
 }
