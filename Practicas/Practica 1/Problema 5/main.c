@@ -20,6 +20,7 @@ int main(int argc, char *argv[]) {
 		 }
 		 printf("\n");
 	}
+	
 	//llenar_matriz(orden, matriz);
 	printf("el determinante vale: %lf \n", calcularDeterminante(matriz, orden));
 	return 0;

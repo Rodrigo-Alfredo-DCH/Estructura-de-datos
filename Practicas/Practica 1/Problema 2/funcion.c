@@ -7,18 +7,35 @@ void intercambiarElementos(int* vector1, int tam,int i)
 	vector2 = (int *)malloc(sizeof(int)*tam);
 		//ordenar datos
 	div=tam/2;
-	i=div;
-	for(j=0;j<div;j++){
-		vector2[j] = vector1[i];
-		i=i+1;
+	if((tam%2)==0){
+		i=div;
+		for(j=0;j<div;j++){
+			vector2[j] = vector1[i];
+			i=i+1;
+		}
+			i=0;
+		for(j=div;j<tam;j++){
+			vector2[j]=vector1[i];
+			i=i+1;
+		}
+		for(i=0;i<tam;i++){
+			printf("vector en posicion %d su valor es %d\n",i,vector2[i]);
+		}
 	}
-		i=0;
-	for(j=div;j<tam;j++){
-		vector2[j]=vector1[i];
-		i=i+1;
+	else{
+		i=div+1;
+		for(j=0;j<=div;j++){
+			vector2[j] = vector1[i];
+			i=i+1;
+		}
+			i=0;
+		for(j=div;j<tam;j++){
+			vector2[j]=vector1[i];
+			i=i+1;
+		}
+		for(i=0;i<tam;i++){
+			printf("vector en posicion %d su valor es %d\n",i,vector2[i]);
+		}
+		
 	}
-	for(i=0;i<tam;i++){
-		printf("vector en posicion %d su valor es %d\n",i,vector2[i]);
-	}
-	
 }
