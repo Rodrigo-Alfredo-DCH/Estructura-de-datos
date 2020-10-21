@@ -44,7 +44,7 @@ double calcularDeterminante(double **matriz, int orden){
 		
 		for(j=0;j<orden; j++){
 			double **menores = formar_menores(orden, matriz, j);
-			suma +=pow(-1,j)*matriz[0][j]*calcularDeterminante(orden-1, menores);
+			suma +=pow(-1,j)*matriz[0][j]*calcularDeterminante(menores, orden-1);
 			borrar_matriz(orden-1, menores);
 		}return suma;
 		}
