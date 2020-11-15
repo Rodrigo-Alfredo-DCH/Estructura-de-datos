@@ -23,7 +23,7 @@ booleano insertarNodo( nodo** cabecera, nodo* nuevo ){
 	if(*cabecera == NULL){
 		
 		*cabecera = nuevo;
-		printf("\nCorrecto 1");
+		
 		return true;
 		
 	}
@@ -32,7 +32,7 @@ booleano insertarNodo( nodo** cabecera, nodo* nuevo ){
 		
 		nuevo->sig= *cabecera;
 		*cabecera=nuevo;
-		printf("\nCorrecto 2");
+	
 		return true;
 	}	
 	// posicionar navegador al inicio de la lista
@@ -42,12 +42,12 @@ booleano insertarNodo( nodo** cabecera, nodo* nuevo ){
 	while( navegador->sig != NULL && nuevo->matricula > navegador->sig->matricula){
 		
 		navegador = navegador->sig;
-		printf("\nCorrecto 3");
+	
 	}
 	
 	// CASO 5 El id esta repetido
 	if(navegador->sig != NULL && nuevo->matricula == navegador->sig->matricula){
-		printf("\nCorrecto 4");
+	
 		return false;
 		
 	}
@@ -56,7 +56,7 @@ booleano insertarNodo( nodo** cabecera, nodo* nuevo ){
 	
 	nuevo->sig = navegador->sig;
 	navegador->sig= nuevo;
-	printf("\nCorrecto 5");
+
 	return true;
 }
 
@@ -65,13 +65,13 @@ booleano insertarNodo( nodo** cabecera, nodo* nuevo ){
 //para crear la funcion  borrar nodo , debe de ser de tipo boolenao como el de acomodar 
 
 booleano borrarNodo (nodo** cabecera, int mat ){
-	printf("\nBorrar entramos a la funcion");
+	
 	nodo* navegador = NULL;
 	nodo* aux = NULL;
 
 	/*caso 1 lista vacia*/
 	if(*cabecera == NULL){
-		printf("\nBorrar lista vacia ");
+		
 		return true;
 	}
 	
@@ -83,7 +83,7 @@ booleano borrarNodo (nodo** cabecera, int mat ){
 		*cabecera = (*cabecera)->sig;
 		
 		free(aux);
-		printf("\nBorrar caso 2");
+	
 		return true;
 	}
 	//pocicionar navegador
@@ -92,13 +92,13 @@ booleano borrarNodo (nodo** cabecera, int mat ){
 	//** RECORRER LISTA*/
 	
 	while( navegador->sig != NULL && mat != navegador->sig->matricula){
-		printf("\nBorrar Recorrer  0");
+		
 		navegador = navegador->sig;
-		printf("\nBorrar Recorrer  1");
+		
 	}
 	
 	if(navegador->sig == NULL){	
-	printf("\nBorrar nave dig es nulo");
+	
 	return false;	
 	}
 	
@@ -159,7 +159,7 @@ void asignarTipoMembresia(nodo* pNodo, int tmemb){
 void asignarMatricula(nodo* pNodo, int mat){
 
 	pNodo->matricula = mat;
-	printf("\n %d guardado ",pNodo->matricula);
+	
 }
 
 //_____________________________________________________

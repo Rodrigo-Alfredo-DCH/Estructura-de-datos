@@ -10,7 +10,7 @@ int main(){
 	char nombre[100];
 	char apeP[50];
 	char direc[200];
-	int matri=0,tipoMemb, edad, i=0, nNodos=0, opmenu;
+	int matri=0,tipoMemb, edad, i=0, nNodos=0, opmenu,opcMostrar,op;
 	
 
 	booleano resp;
@@ -23,7 +23,7 @@ int main(){
 		printf("\t\t***MENU INICIO\n");
 		printf("\t 1. Ver tipos de membresia \n");
 		printf("\t 2. Crear un nuevo registro \n");
-		printf("\t 3. Buscar en los registros \n");
+		printf("\t 3. Mostrar y buscar en los registros \n");
 		printf("\t 4. Eliminar un registro \n");
 		printf("\t 0. Salir");
 		printf("\n\t\tElija una opcion: ");
@@ -39,13 +39,13 @@ int main(){
 				break;
 								
 			case 2:
-				do{
+				//do{
 				system("cls");
 				printf("Ingrese el nuemero de registros a insertar min 15 socios: ");
 				setbuf(stdin, NULL);
 				scanf("%d",&nNodos);
 				
-				}while(nNodos < 15);
+				//}while(nNodos < 15);
 				system("cls");
 				for(i;i<nNodos; i++){
 	
@@ -68,8 +68,9 @@ int main(){
 					    printf( "Ingresa la direccion: " );
 					    setbuf(stdin, NULL);
 					    gets( direc);
-					    printf("Elija una membrecia \n \t1.Basica \t 2.intermedia \t 3.VIP");
-					    scanf("%d",&tipoMemb);
+						printf("membrecias \n \t1.Basica \t 2.intermedia \t 3.VIP \n\t Elija una membrecia");
+					    setbuf(stdin, NULL);
+						scanf("%d",&tipoMemb);
 					    printf("\ningrese el numero de membresia: ");
 						setbuf(stdin, NULL);
 						scanf("%d", &matri);
@@ -83,7 +84,6 @@ int main(){
 					    asignarTipoMembresia(nuevo, tipoMemb);
 					    asignarMatricula(nuevo, matri);
 						
-				
 								    
 					    resp = insertarNodo( &inicio, nuevo );
 					    
@@ -96,7 +96,44 @@ int main(){
 				break;
 								
 			case 3:
-				
+				printf("\n\t 1. Ver todo");			
+				printf("\n\t 2. Buscar por nombre");
+				printf("\n\t 3. Buscar por letra inicial");
+				printf("\n\t 4. Buscar por apellido");
+				printf("\n\t 5. Buscar por  menor o igual al numero de membresia" );
+				printf("\n\t 6. Buscar por  mayor o igual al numero de membresia");
+				printf("\n\t 7. Buscar por edad" );
+				printf("\n\t 8. Buscar entre edades");
+				printf("\n\t 9. Buscar por numero de membrecia");
+				printf("\n\t Elija un Opcion");
+				scanf("%d",&opcMostrar);
+				switch(opcMostrar){
+					case 1:
+						op=0;
+						mostrarRegistro(&inicio, nuevo,op);
+						system("pause");
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					case 4:
+						break;
+					case 5:
+						break;
+					case 6:
+						
+						break;
+					case 7:
+						break;
+					case 8:
+						break;
+					case 9:
+						break;
+					case 10:
+						break;
+				}
+											
 				break;
 								
 			case 4:
