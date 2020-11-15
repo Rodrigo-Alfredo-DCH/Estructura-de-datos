@@ -68,18 +68,23 @@ int main(){
 					    printf( "Ingresa la direccion: " );
 					    setbuf(stdin, NULL);
 					    gets( direc);
-					    printf("\nElija una membrecia \n \t1.Basica \t 2.intermedia \t 3.VIP");
-					    printf("\n\t 1. basica: la membrecia basica solo le ofrece la entrada sin filas ");
+					    printf("Elija una membrecia \n \t1.Basica \t 2.intermedia \t 3.VIP");
 					    scanf("%d",&tipoMemb);
 					    printf("\ningrese el numero de membresia: ");
 						setbuf(stdin, NULL);
 						scanf("%d", &matri);
 						
 						
-					    asignarMatricula(nuevo, matri);
+					    
 					    asignarNombre( nuevo, nombre );
-					    asignarDireccion(nuevo, direc);
-											    
+					    asignarApellido( nuevo, apeP);
+					    asignarEdad( nuevo, edad);
+					    asignarDireccion(nuevo, direc);					    
+					    asignarTipoMembresia(nuevo, tipoMemb);
+					    asignarMatricula(nuevo, matri);
+						
+				
+								    
 					    resp = insertarNodo( &inicio, nuevo );
 					    
 					    if( resp == false ){

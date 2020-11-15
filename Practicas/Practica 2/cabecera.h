@@ -31,18 +31,25 @@ typedef struct Nodo{
 }nodo;
 
 nodo* crearNodo();
+booleano insertarNodo( nodo** cabecera, nodo* nuevo );
+booleano borrarNodo (nodo** cabecera, int mat );
 //-------------------------------------------------------------
 
 void asignarMatricula(nodo* pNodo, int mat);
 void asignarNombre(nodo* pNodo, char* nom);
 void asignarApellido(nodo* pNodo, char* ape);
+void asignarEdad (nodo* pNodo, int ed);
 void asignarDireccion(nodo* pNodo, char* dir);
 void asignarTipoMembresia(nodo* pNodo, int tmemb);
 //---------------------------------------------------------------------
 void membresias();
 //-----------------------------------------------------------------------
+void mostrarNombre (nodo* pNodo);
+void mostrarApellido (nodo* pNodo);
+void mostrarTipoMembresia (nodo* pNodo);
+void mostrarEdad (nodo* pNodo);
+void mostrarNumMembresia (nodo* pNodo);
 void mostrarRegistro(nodo** cabecera, nodo* nuevo, int op);
 
 
-booleano insertarNodo( nodo** cabecera, nodo* nuevo );
-booleano borrarNodo (nodo** cabecera, int mat );
+

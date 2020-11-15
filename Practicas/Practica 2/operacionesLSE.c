@@ -119,43 +119,75 @@ void membresias(){
 //-----------------------------------------------------------------------
 
 /* Asignacion de  los Datos*/
-void asignarMatricula(nodo* pNodo, int mat){
 
-	pNodo->matricula = mat;
-	
-}
 void asignarNombre(nodo* pNodo, char* nom){
 	
-	strcpy(pNodo->info.nombre, nom);	
+	strcpy(pNodo->info.nombre, nom);
 	
 }
+
+void asignarApellido(nodo* pNodo, char* ape){
+	
+	strcpy(pNodo->info.apellidoP, ape);
+
+}
+
+void asignarEdad (nodo* pNodo, int ed){
+	pNodo->info.edad = ed;
+
+}
+
 void asignarDireccion(nodo* pNodo, char* dir){
 	
 	strcpy(pNodo->info.direccion, dir);	
 	
 }
-void asignarApellido(nodo* pNodo, char* ape){
-	
-	strcpy(pNodo->info.apellidoP, ape);
-}
+
 void asignarTipoMembresia(nodo* pNodo, int tmemb){
 	if(tmemb==1){
-		pNodo->info.tipoMembresia,"basica";
+		strcpy(pNodo->info.tipoMembresia, "basica");
+	
 	}
 	if(tmemb==2){
-		pNodo->info.tipoMembresia,"intermedia";
+		strcpy(pNodo->info.tipoMembresia, "Intermedio");
 	}
 	if(tmemb==3){
-		pNodo->info.tipoMembresia,"VIP";
+		strcpy(pNodo->info.tipoMembresia, "VIP");
 	}
+}
+
+void asignarMatricula(nodo* pNodo, int mat){
+
+	pNodo->matricula = mat;
+	printf("\n %d guardado ",pNodo->matricula);
 }
 
 //_____________________________________________________
+void mostrarNombre (nodo* pNodo){
+	printf("\n %s guardado ",pNodo->info.nombre);
+}
 
+void mostrarApellido (nodo* pNodo){
+	printf("\n %s guardado ",pNodo->info.apellidoP);
+}
 
+void mostrarEdad (nodo* pNodo){
+	printf("\n %d guardado ", pNodo->info.edad);
+}
 
+void mostrarTipoMembresia (nodo* pNodo){
+	printf("\n %s guardado ",pNodo->info.tipoMembresia);
+}
 
+void mostrarDireccion (nodo* pNodo){
+	printf("\n %d guardado ",pNodo->info.direccion);
+}
 
+void mostrarNumMembresia (nodo* pNodo){
+	printf("\n %d guardado ",pNodo->matricula);
+}
+
+//-----------------------------------------------------
 
 /*Mostrar datos del nodos*/
 
