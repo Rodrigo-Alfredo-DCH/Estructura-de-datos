@@ -40,7 +40,52 @@ int main(){
 				break;
 								
 			case 2:
+				do{
+				system("cls");
+				printf("Ingrese el nuemero de registros a insertar min 15 socios: ");
+				setbuf(stdin, NULL);
+				scanf("%d",&nNodos);
 				
+				}while(nNodos < 15);
+				system("cls");
+				for(i;i<nNodos; i++){
+	
+					nuevo=crearNodo();
+ 
+			  		if( nuevo == NULL ) {
+	    				printf( "No se pudo crear el nuevo nodo..\n" );  
+	  				}
+					else{
+	  		  	
+	   					printf( "Ingresar nombre: " );
+					    setbuf(stdin, NULL);
+					    gets( nombre );	   
+					    printf( "Ingresa el primer apellido: " );
+					    setbuf(stdin, NULL);
+					    gets( apeP );	  
+					    printf("Ingrese la edad: ");
+					    
+					    printf( "Ingresa la direccion: " );
+					    setbuf(stdin, NULL);
+					    gets( direc);
+					    printf("Elija una membrecia \n \t1.Basica \t 2.intermedia \t 3.VIP");
+					    printf("\t 1. basica: la membrecia basica solo le ofrece la entrada sin filas ");
+					    
+					    printf("\ningrese la matricula : ");
+					  	setbuf(stdin, NULL);
+					  	scanf("%d", &matri);
+					    asignarMatricula(nuevo, matri);
+					    asignarNombre( nuevo, nombre );
+					    asignarDireccion(nuevo, direc);
+											    
+					    resp = insertarNodo( &inicio, nuevo );
+					    
+					    if( resp == false ){
+					    	
+					      printf( "El ID ya existe..." );
+					    }
+					}
+				}
 				break;
 								
 			case 3:
