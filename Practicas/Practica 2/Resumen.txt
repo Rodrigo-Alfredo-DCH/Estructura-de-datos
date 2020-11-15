@@ -1,0 +1,3 @@
+Me quede atorado tratando de crear un ciclo para la creacion de n nodos
+
+Solo agregue direccion al codigo y generar una matricula desde teclado 
