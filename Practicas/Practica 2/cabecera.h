@@ -33,6 +33,7 @@ void asignarMatricula(nodo* pNodo, int mat);
 void asignarNombre(nodo* pNodo, char* nom);
 void asignarDireccion(nodo* pNodo, char* dir);
 
+void membresias();
 
 void mostrarRegistro(nodo** cabecera, nodo* nuevo, int op);
 

@@ -20,17 +20,22 @@ int main(){
 	
 	
 	do{
+		system("cls");
 		printf("\t\t***MENU INICIO\n");
 		printf("\t 1. Ver tipos de membresia \n");
 		printf("\t 2. Crear un nuevo registro \n");
 		printf("\t 3. Buscar en los registros \n");
 		printf("\t 4. Eliminar un registro \n");
-		printf("\t 0. Salir")
-		printf("\tElija una opcion: ");
+		printf("\t 0. Salir");
+		printf("\n\t\tElija una opcion: ");
 		scanf("%d", &opmenu);
 		
 		switch(opmenu){
 			case 1:
+				
+				system("cls");
+				membresias();								
+				system("pause");
 				
 				break;
 								
@@ -49,10 +54,10 @@ int main(){
 			default: 
 				printf("\nEsa no es una opcion");
 			}
-		}-
 		
 		
-	}while(opmenu !=0);
+		
+	}while(opmenu != 0);
   
   
 }
