@@ -31,12 +31,16 @@ typedef struct Nodo{
 }nodo;
 
 nodo* crearNodo();
+//-------------------------------------------------------------
+
 void asignarMatricula(nodo* pNodo, int mat);
 void asignarNombre(nodo* pNodo, char* nom);
+void asignarApellido(nodo* pNodo, char* ape);
 void asignarDireccion(nodo* pNodo, char* dir);
-
+void asignarTipoMembresia(nodo* pNodo, int tmemb);
+//---------------------------------------------------------------------
 void membresias();
-
+//-----------------------------------------------------------------------
 void mostrarRegistro(nodo** cabecera, nodo* nuevo, int op);
 
 

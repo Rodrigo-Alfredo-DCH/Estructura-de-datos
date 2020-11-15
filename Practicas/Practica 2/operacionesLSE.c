@@ -12,7 +12,7 @@ nodo* crearNodo(){
 	return p;
 }
 
-
+//-----------------------------------------------------------------------------------------------------------------------------
 /** Insertar Nodo*/
 
 booleano insertarNodo( nodo** cabecera, nodo* nuevo ){
@@ -60,6 +60,7 @@ booleano insertarNodo( nodo** cabecera, nodo* nuevo ){
 	return true;
 }
 
+//------------------------------------------------------------------------------------------------------------------
 
 //para crear la funcion  borrar nodo , debe de ser de tipo boolenao como el de acomodar 
 
@@ -107,7 +108,7 @@ booleano borrarNodo (nodo** cabecera, int mat ){
 	free(aux);
 	 
 }
-
+//-------------------------------------------------------------------------
 void membresias(){
 	printf("\n Tenemos 3 tipos de membresias");
 	printf("\n1. Basica  \n\t Te da un descuento del 15% en tu consumo \n\t +Bebida gratis \n");
@@ -115,6 +116,7 @@ void membresias(){
 	printf("\n3. VIP \n\t+ 40% de descuento en tu consumo \n\t + Barra libre para ti y un acompañante \n\t+entrada libre sin reservacion \n\t+ postre gratis \n");
 	
 }
+//-----------------------------------------------------------------------
 
 /* Asignacion de  los Datos*/
 void asignarMatricula(nodo* pNodo, int mat){
@@ -148,7 +150,14 @@ void asignarTipoMembresia(nodo* pNodo, int tmemb){
 	}
 }
 
-/*Mostrar datos del nodo*/
+//_____________________________________________________
+
+
+
+
+
+
+/*Mostrar datos del nodos*/
 
 void mostrarRegistro(nodo** cabecera, nodo* nuevo, int op){
 	
