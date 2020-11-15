@@ -9,10 +9,12 @@ typedef char booleano;
 
 typedef struct Datos{
 	
+	char tipoMembresia[20];
 	char nombre[100];
 	char apellidoP[100];
 	char direccion[200];
-	int menbresia;
+	int edad;
+	
 	
 }datos;
 /*Struct que define un dodo para una LSE*/

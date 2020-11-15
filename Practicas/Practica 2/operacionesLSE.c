@@ -118,14 +118,13 @@ void membresias(){
 
 /* Asignacion de  los Datos*/
 void asignarMatricula(nodo* pNodo, int mat){
+
 	pNodo->matricula = mat;
 	
 }
 void asignarNombre(nodo* pNodo, char* nom){
 	
-	strcpy(pNodo->info.nombre, nom);
-	
-	
+	strcpy(pNodo->info.nombre, nom);	
 	
 }
 void asignarDireccion(nodo* pNodo, char* dir){
@@ -133,6 +132,22 @@ void asignarDireccion(nodo* pNodo, char* dir){
 	strcpy(pNodo->info.direccion, dir);	
 	
 }
+void asignarApellido(nodo* pNodo, char* ape){
+	
+	strcpy(pNodo->info.apellidoP, ape);
+}
+void asignarTipoMembresia(nodo* pNodo, int tmemb){
+	if(tmemb==1){
+		pNodo->info.tipoMembresia,"basica";
+	}
+	if(tmemb==2){
+		pNodo->info.tipoMembresia,"intermedia";
+	}
+	if(tmemb==3){
+		pNodo->info.tipoMembresia,"VIP";
+	}
+}
+
 /*Mostrar datos del nodo*/
 
 void mostrarRegistro(nodo** cabecera, nodo* nuevo, int op){

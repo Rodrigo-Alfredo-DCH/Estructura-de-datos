@@ -10,9 +10,8 @@ int main(){
 	char nombre[100];
 	char apeP[50];
 	char direc[200];
-	int i=0, nNodos=0, opmenu;
-	int matri=0;
-	int membresia;
+	int matri=0,tipoMemb, edad, i=0, nNodos=0, opmenu;
+	
 
 	booleano resp;
 	nodo* inicio =NULL;
@@ -64,16 +63,19 @@ int main(){
 					    setbuf(stdin, NULL);
 					    gets( apeP );	  
 					    printf("Ingrese la edad: ");
-					    
+					    setbuf(stdin, NULL);
+					    scanf("%d", &edad);
 					    printf( "Ingresa la direccion: " );
 					    setbuf(stdin, NULL);
 					    gets( direc);
-					    printf("Elija una membrecia \n \t1.Basica \t 2.intermedia \t 3.VIP");
-					    printf("\t 1. basica: la membrecia basica solo le ofrece la entrada sin filas ");
-					    
-					    printf("\ningrese la matricula : ");
-					  	setbuf(stdin, NULL);
-					  	scanf("%d", &matri);
+					    printf("\nElija una membrecia \n \t1.Basica \t 2.intermedia \t 3.VIP");
+					    printf("\n\t 1. basica: la membrecia basica solo le ofrece la entrada sin filas ");
+					    scanf("%d",&tipoMemb);
+					    printf("\ningrese el numero de membresia: ");
+						setbuf(stdin, NULL);
+						scanf("%d", &matri);
+						
+						
 					    asignarMatricula(nuevo, matri);
 					    asignarNombre( nuevo, nombre );
 					    asignarDireccion(nuevo, direc);
