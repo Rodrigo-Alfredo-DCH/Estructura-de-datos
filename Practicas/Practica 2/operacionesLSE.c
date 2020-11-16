@@ -106,8 +106,36 @@ booleano borrarNodo (nodo** cabecera, int mat ){
 	navegador->sig = aux->sig;
 	
 	free(aux);
-	 
+	
+}	
+
+//------------------------------------------------------------------------------------------------------------------
+
+//para crear la funcion  borrar nodo , debe de ser de tipo boolenao como el de acomodar 
+ booleano borrarLista(nodo** pNodo)
+{
+    nodo* aBorrar;
+    while(*pNodo!=NULL)
+    {
+        aBorrar=*pNodo;
+        *pNodo=(*pNodo)->sig;
+        free(aBorrar);
+    }
+    return *pNodo;
 }
+
+booleano borrarMenorIgualQ(nodo** pNodo, int memb)
+{
+    nodo* aBorrar;
+    while((*pNodo)->sig <= memb)
+    {
+        aBorrar=*pNodo;
+        *pNodo=(*pNodo)->sig;
+        free(aBorrar);
+    }
+    return true;
+}
+
 //-------------------------------------------------------------------------
 void membresias(){
 	printf("\n Tenemos 3 tipos de membresias");
@@ -201,9 +229,12 @@ void mostrarRegistro(nodo** cabecera, nodo* nuevo, int op){
 	//Mostrar todos los registros
 	if(op==0){
 		while(navegador!=NULL){
-			printf("La matricula es: %d\n",navegador->matricula);
-			printf("El nombre registrado para esta matricula es: %s\n",navegador->info.nombre);
-			printf("La dirección del usuario es: %s\n\n",navegador->info.direccion);
+			printf("Numero de membresia: %d\n",navegador->matricula);
+			printf("El nombre del meimbro: %s\n",navegador->info.nombre);
+			printf("El apellido del meimbro: %s\n",navegador->info.apellidoP);
+			printf("Edad: %d\n",navegador->info.edad);
+			printf("La dirección del usuario es: %s\n",navegador->info.direccion);
+			printf("Membresia: %s\n\n",navegador->info.tipoMembresia);
 			navegador=navegador->sig;
 		}
 		
@@ -214,9 +245,12 @@ void mostrarRegistro(nodo** cabecera, nodo* nuevo, int op){
 			
 			if(navegador->matricula==op){
 				
-				printf("La matricula es: %d\n",navegador->matricula);
-				printf("El nombre registrado para esta matricula es: %s\n",navegador->info.nombre);
+				printf("Numero de membresia: %d\n",navegador->matricula);
+				printf("El nombre del meimbro: %s\n",navegador->info.nombre);
+				printf("El apellido del meimbro: %s\n",navegador->info.apellidoP);
+				printf("Edad: %d\n",navegador->info.edad);
 				printf("La dirección del usuario es: %s\n\n",navegador->info.direccion);
+				printf("Membresia: %s\n",navegador->info.tipoMembresia);
 				tf=1;
 				break;
 			}
