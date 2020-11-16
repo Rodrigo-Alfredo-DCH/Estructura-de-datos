@@ -121,13 +121,13 @@ booleano borrarNodo (nodo** cabecera, int mat ){
         *pNodo=(*pNodo)->sig;
         free(aBorrar);
     }
-    return *pNodo;
+    return true;
 }
 
 booleano borrarMenorIgualQ(nodo** pNodo, int memb)
 {
     nodo* aBorrar;
-    while((*pNodo)->sig <= memb)
+    while((*pNodo)->sig >= memb)
     {
         aBorrar=*pNodo;
         *pNodo=(*pNodo)->sig;
