@@ -366,4 +366,3 @@ void buscarXMembresia(nodo** cabecera, nodo* nuevo,int matri)
 	}
 	system("PAUSE");
 }
-

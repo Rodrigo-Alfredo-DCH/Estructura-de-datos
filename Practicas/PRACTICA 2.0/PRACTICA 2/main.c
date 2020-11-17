@@ -5,7 +5,8 @@
 #include"cabecera.h"
 
 
-int main(){
+int main()
+{
 	setlocale(LC_ALL, "");
 	char nombre[100];
 	char apeP[50];
