@@ -15,8 +15,8 @@ typedef struct Datos{
 	char direccion[200];
 	int edad;
 	
-	
 }datos;
+
 /*Struct que define un nodo para una LSE*/
 typedef struct Nodo{
 	
@@ -57,3 +57,7 @@ void buscarEdad(nodo** cabecera, nodo* nuevo,int ed);
 void buscarEntreEdades(nodo** cabecera, nodo* nuevo,int ed);
 void buscarXmembresia(nodo** cabecera, nodo* nuevo,int matri);
 void buscarXMembresia(nodo** cabecera, nodo* nuevo,int matri);
+
+void mostrarnombre (nodo** cabecera);
+void mostrarletra (nodo** cabecera);
+void mostrarapellido (nodo** cabecera);
