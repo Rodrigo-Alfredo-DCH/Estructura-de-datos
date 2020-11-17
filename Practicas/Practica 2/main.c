@@ -60,24 +60,29 @@ int main(){
 	  				}
 					else{
 	  		  	
-	   					printf( "Ingresar nombre: " );
+	   					printf( "\n\n*********************************************************************************" );
+						printf( "\n   Ingresar nombre: " );
 					    setbuf(stdin, NULL);
-					    gets( nombre );	   
-					    printf( "Ingresa el primer apellido: " );
+					    scanf( "%s", &nombre );	   
+					    printf( "   Ingresa el primer apellido: " );
 					    setbuf(stdin, NULL);
-					    gets( apeP );	  
-					    printf("Ingrese la edad: ");
+					    scanf( "%s", &apeP );	  
+					    printf( "   Ingrese la edad: " );
 					    setbuf(stdin, NULL);
 					    scanf("%d", &edad);
-					    printf( "Ingresa la direccion: " );
+					    printf( "   Ingresa la direccion: " );
 					    setbuf(stdin, NULL);
-					    gets( direc);
-						printf("Membrecias \n \t1.Basica \t 2.Intermedia \t 3.VIP \n\t Elija una membresia");
+					    gets(direc);
+					    printf( "   --------------------------------------------------------------------------" );
+					    printf( "\n   |                          MEMBRECIAS                                    |" );
+						printf( "\n   |          1. Basica           2. intermedia           3. VIP            |" );
+						printf( "\n   --------------------------------------------------------------------------" );
+						printf( "\n   Elija una membrecia: " );
 					    setbuf(stdin, NULL);
-						scanf("%d",&tipoMemb);
-					    printf("\nIngrese el numero de membresia: ");
+						scanf( "%d",&tipoMemb );
+					    printf( "   Ingrese el numero de membresia: " );
 						setbuf(stdin, NULL);
-						scanf("%d", &matri);		
+						scanf( "%d", &matri );
 					    
 					    asignarNombre( nuevo, nombre );
 					    asignarApellido( nuevo, apeP);
