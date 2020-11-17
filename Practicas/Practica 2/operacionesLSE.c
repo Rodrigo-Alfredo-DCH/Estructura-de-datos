@@ -367,3 +367,101 @@ void buscarXMembresia(nodo** cabecera, nodo* nuevo,int matri)
 	system("PAUSE");
 }
 
+/*Mostrar registros con el mismo nombre*/
+
+void mostrarnombre (nodo** cabecera){
+	
+	nodo* navegador = NULL;
+	navegador = *cabecera;
+	char nom[100];
+	
+	printf("\tEscribe el nombre con el que deseas hacer la busqueda: ");
+	setbuf(stdin, NULL);
+	gets( nom );
+	
+	system("cls");
+	printf("\n\tREGISTROS CON EL NOMBRE %s.\n\n", nom);
+	
+	while( navegador != NULL )
+	{
+		if( nom == navegador->info.nombre )
+		{
+			printf("\n\t----------------------------------------------");
+			printf("\n\tNumero de membresia: %d", navegador->matricula);
+			printf("\n\tEl nombre del miembro: %s", navegador->info.nombre);
+			printf("\n\tEl apellido del miembro: %s", navegador->info.apellidoP);
+			printf("\n\tEdad: %d", navegador->info.edad);
+			printf("\n\tLa dirección del usuario es: %s", navegador->info.direccion);
+			printf("\n\tMembresia: %s\n", navegador->info.tipoMembresia);
+		}
+		navegador=navegador->sig;
+	}
+		
+}
+
+
+/*Mostrar registros con la misma inicial*/
+
+void mostrarletra (nodo** cabecera) {
+	
+	nodo* navegador = NULL;
+	navegador = *cabecera;
+	char inicial;
+	
+	printf("\tEscribe la letra inicial con el que deseas hacer la busqueda: ");
+	setbuf(stdin, NULL);
+	scanf("%c", &inicial);
+	
+	system("cls");
+	printf("\n\tREGISTROS CON LA INICIAL DEL NOMBRE %c. \n\n", inicial);
+	
+	while( navegador != NULL )
+	{
+		if( inicial == navegador->info.nombre[0] )
+		{
+			printf("\n\t----------------------------------------------");
+			printf("\n\tNumero de membresia: %d", navegador->matricula);
+			printf("\n\tEl nombre del miembro: %s", navegador->info.nombre);
+			printf("\n\tEl apellido del miembro: %s", navegador->info.apellidoP);
+			printf("\n\tEdad: %d", navegador->info.edad);
+			printf("\n\tLa dirección del usuario es: %s", navegador->info.direccion);
+			printf("\n\tMembresia: %s\n", navegador->info.tipoMembresia);
+		}
+		
+		navegador=navegador->sig;
+	}
+}
+
+
+/*Mostrar registros con el mismo apellido*/
+
+void mostrarapellido (nodo** cabecera) {
+	
+	nodo* navegador = NULL;
+	navegador = *cabecera;
+	char apellido[100];
+	
+	printf("\tEscribe el apellido con el que deseas hacer la busqueda: ");
+	setbuf(stdin, NULL);
+	scanf("%s", &apellido);
+	
+	system("cls");
+	printf("\n\tREGISTROS CON EL APELLIDO %s. \n\n", apellido);
+	
+	while( navegador != NULL )
+	{
+		if( apellido == navegador->info.apellidoP )
+		{
+			printf("\n\t----------------------------------------------");
+			printf("\n\tNumero de membresia: %d", navegador->matricula);
+			printf("\n\tEl nombre del miembro: %s", navegador->info.nombre);
+			printf("\n\tEl apellido del miembro: %s", navegador->info.apellidoP);
+			printf("\n\tEdad: %d", navegador->info.edad);
+			printf("\n\tLa dirección del usuario es: %s", navegador->info.direccion);
+			printf("\n\tMembresia: %s\n", navegador->info.tipoMembresia);
+		}
+		
+		navegador=navegador->sig;
+	}
+}
+
