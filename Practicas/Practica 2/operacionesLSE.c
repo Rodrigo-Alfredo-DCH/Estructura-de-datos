@@ -374,6 +374,7 @@ void mostrarnombre (nodo** cabecera){
 	nodo* navegador = NULL;
 	navegador = *cabecera;
 	char nom[100];
+	short aux = 0, i=0;
 	
 	printf("\tEscribe el nombre con el que deseas hacer la busqueda: ");
 	setbuf(stdin, NULL);
@@ -384,7 +385,14 @@ void mostrarnombre (nodo** cabecera){
 	
 	while( navegador != NULL )
 	{
-		if( nom == navegador->info.nombre )
+		while(i<100)
+		{
+			if( nom[i] == navegador->info.nombre[i] )
+				aux = aux + 1;
+			i++;
+		}
+			
+		if(aux==100)
 		{
 			printf("\n\t----------------------------------------------");
 			printf("\n\tNumero de membresia: %d", navegador->matricula);
@@ -394,6 +402,7 @@ void mostrarnombre (nodo** cabecera){
 			printf("\n\tLa dirección del usuario es: %s", navegador->info.direccion);
 			printf("\n\tMembresia: %s\n", navegador->info.tipoMembresia);
 		}
+		
 		navegador=navegador->sig;
 	}
 		
@@ -440,17 +449,25 @@ void mostrarapellido (nodo** cabecera) {
 	nodo* navegador = NULL;
 	navegador = *cabecera;
 	char apellido[100];
+	short aux = 0, i=0;
 	
 	printf("\tEscribe el apellido con el que deseas hacer la busqueda: ");
 	setbuf(stdin, NULL);
-	scanf("%s", &apellido);
+	gets( apellido );
 	
 	system("cls");
 	printf("\n\tREGISTROS CON EL APELLIDO %s. \n\n", apellido);
 	
 	while( navegador != NULL )
 	{
-		if( apellido == navegador->info.apellidoP )
+		while(i<100)
+		{
+			if( apellido[i] == navegador->info.apellidoP[i] )
+				aux = aux + 1;
+			i++;
+		}
+			
+		if(aux==100)
 		{
 			printf("\n\t----------------------------------------------");
 			printf("\n\tNumero de membresia: %d", navegador->matricula);
@@ -464,4 +481,3 @@ void mostrarapellido (nodo** cabecera) {
 		navegador=navegador->sig;
 	}
 }
-
