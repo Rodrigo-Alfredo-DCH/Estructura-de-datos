@@ -20,7 +20,7 @@ int main(){
 	
 	do{
 		system("cls");
-		printf("\t\t***MENU INICIO***\n");
+		printf("\n\t********* DEJAVU LIVE CLUB *********\n\n");
 		printf("\t 1. Ver tipos de membresia \n");
 		printf("\t 2. Crear un nuevo registro \n");
 		printf("\t 3. Mostrar y buscar en los registros \n");
@@ -30,6 +30,10 @@ int main(){
 		scanf("%d", &opmenu);
 		
 		switch(opmenu){
+			case 0:
+				return 0;
+				break;
+				
 			case 1:
 				
 				system("cls");
@@ -113,10 +117,25 @@ int main(){
 						system("pause");
 						break;
 					case 2:
+						system("cls");
+						printf("\n\tBUSQUEDA DE REGISTRO POR NOMBRE\n\n");
+						mostrarnombre(&inicio);
+						printf("\n\t");
+						system("pause");
 						break;
 					case 3:
+						system("cls");
+						printf("\n\tBUSQUEDA DE REGISTRO POR LETRA INICIAL DEL NOMBRE\n\n");
+						mostrarletra(&inicio);
+						printf("\n\t");
+						system("pause");
 						break;
 					case 4:
+						system("cls");
+						printf("\n\tBUSQUEDA DE REGISTRO POR APELLIDO\n\n");
+						mostrarapellido(&inicio);
+						printf("\n\t");
+						system("pause");
 						break;
 					case 5:
 						buscarXMembresia(&inicio,nuevo,matri);
