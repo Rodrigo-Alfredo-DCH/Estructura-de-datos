@@ -126,13 +126,39 @@ booleano borrarNodo (nodo** cabecera, int mat ){
 
 booleano borrarMenorIgualQ(nodo** pNodo, int memb)
 {
-    nodo* aBorrar;
- //   while((*pNodo)->sig >= memb)
+    nodo* aBorrar = NULL;
+   while(*pNodo != NULL && memb >= (*pNodo)->sig->matricula)
     {
+    	printf("eliminamos");
         aBorrar=*pNodo;
         *pNodo=(*pNodo)->sig;
         free(aBorrar);
     }
+    aBorrar=*pNodo;
+        *pNodo=(*pNodo)->sig;
+        free(aBorrar);
+    return true;
+}
+booleano borrarMayorIgualQ(nodo** pNodo, int memb)
+{
+    nodo* aBorrar = NULL;
+   while((*pNodo)->sig != NULL)
+    {
+    	if(memb >= (*pNodo)->matricula){
+    
+        printf("eliminamos");
+        aBorrar=*pNodo;
+        *pNodo=(*pNodo)->sig;
+        free(aBorrar);
+        
+        
+		}
+		else{
+		*pNodo=(*pNodo)->sig;	
+		
+		}
+    }
+    
     return true;
 }
 

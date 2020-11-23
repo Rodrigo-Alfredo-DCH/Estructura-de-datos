@@ -178,6 +178,9 @@ int main(){
 						borrarMenorIgualQ( &inicio, matri );
 						break;
 					case 3:
+						printf("\nApartir de que numero de membresia desea borrar: ");
+						scanf("%d", &matri);
+						borrarMayorIgualQ( &inicio, matri );
 						break;
 					case 4:
 						break;

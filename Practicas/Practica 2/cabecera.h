@@ -34,7 +34,9 @@ nodo* crearNodo();
 booleano insertarNodo( nodo** cabecera, nodo* nuevo );
 booleano borrarNodo (nodo** cabecera, int mat );
 booleano borrarMenorIgualQ(nodo** pNodo, int memb);
+booleano borrarMayorIgualQ(nodo** pNodo, int memb);
 booleano borrarLista(nodo** pNodo);
+
 //-------------------------------------------------------------
 
 void asignarMatricula(nodo* pNodo, int mat);
