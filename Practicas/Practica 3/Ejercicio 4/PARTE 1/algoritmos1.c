@@ -61,10 +61,8 @@ void merge_sort(int *array, int p, int r)
 {
     if (p < r)
     {
-        // Dividir el problema en subproblemas
         int q = (p + r)/2;
         
-        // Resolver el problema de manera recursiva hasta llegar a una solucion trivial
         merge_sort(array, p, q);
         merge_sort(array, q + 1, r);
         

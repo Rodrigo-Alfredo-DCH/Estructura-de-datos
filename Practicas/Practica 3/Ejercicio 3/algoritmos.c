@@ -10,7 +10,8 @@ int busquedaBinariaRecursiva(int arreglo[], int busqueda, int izquierda, int der
     int indiceDeLaMitad = floor((izquierda + derecha) / 2);
 
     int valorQueEstaEnElMedio = arreglo[indiceDeLaMitad];
-    if (busqueda == valorQueEstaEnElMedio){
+    if (busqueda == valorQueEstaEnElMedio)
+	{
         return indiceDeLaMitad;
     }
     
