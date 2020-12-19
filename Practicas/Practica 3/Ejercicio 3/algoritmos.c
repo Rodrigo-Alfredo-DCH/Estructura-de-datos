@@ -1,4 +1,4 @@
-#include <stdio.h> // Para printf
+#include <stdio.h> 
 #include <math.h> // Para floor
 #include "cabecera.h"
 
