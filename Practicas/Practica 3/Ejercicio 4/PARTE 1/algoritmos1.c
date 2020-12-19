@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "cabecera.h"
+#include "cabecera1.h"
 
 
 void merge(int *array, int p, int q, int r)
@@ -29,7 +29,6 @@ void merge(int *array, int p, int q, int r)
     i = 0;
     j = 0;
 
-    // Fusion de datos respetando el valor minimos entre dos arreglos
     for (k = p; k < r + 1; k++)
     {
         if (i == n_1)
@@ -69,7 +68,6 @@ void merge_sort(int *array, int p, int r)
         merge_sort(array, p, q);
         merge_sort(array, q + 1, r);
         
-        // Fusion de resultados parciales
         merge(array, p, q, r);
     }
 }
